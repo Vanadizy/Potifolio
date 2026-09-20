@@ -5,6 +5,9 @@ deviconStyles.rel = 'stylesheet';
 deviconStyles.href = 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css';
 document.head.appendChild(deviconStyles);
 const shareDescription = 'Computer Science graduate and technology professional in Tanzania with experience in mobile apps, web development, PHP, React, Flutter, C, C++, MySQL, PostgreSQL, networking, systems support, embedded systems, Arduino, ESP32, graphics/UI design, Agentic AI, software engineering, and IT support. A fast learner and problem solver focused on reliable, secure, and useful digital solutions.';
+const personalPreviewImage = 'https://potifolio-olive.vercel.app/assets/images/og-image.jpeg';
+document.querySelectorAll('meta[property="og:image"], meta[name="twitter:image"]').forEach(meta => meta.setAttribute('content', personalPreviewImage));
+document.querySelector('link[rel="icon"]')?.setAttribute('href', personalPreviewImage);
 document.querySelector('meta[name="description"]')?.setAttribute('content', shareDescription);
 document.querySelector('meta[property="og:description"]')?.setAttribute('content', shareDescription);
 if (!document.querySelector('meta[name="twitter:description"]')) { const twitterDescription = document.createElement('meta'); twitterDescription.name = 'twitter:description'; twitterDescription.content = shareDescription; document.head.appendChild(twitterDescription); }
