@@ -1,6 +1,6 @@
-# Emmanuel Martine Charles Portfolio
+# Emmanuel Martin Charles Portfolio
 
-This repository contains Emmanuel Martine Charles's personal portfolio website. It presents his background as a Computer Science graduate, software developer, mobile application developer, web designer, and IT support professional in Tanzania.
+This repository contains Emmanuel Martin Charles's personal portfolio website. It presents his background as a Computer Science graduate, software developer, mobile application developer, web designer, and IT support professional in Tanzania.
 
 The website is designed as a professional personal-brand site with a clean CV-inspired layout, liquid-glass cards, responsive spacing, soft animations, project previews, contact options, and social links.
 
@@ -35,6 +35,7 @@ The supplied assets currently include:
 - `assets/images/logo-halotel.png` — Halotel logo used in the contact details.
 - `assets/docs/Emmanuel_Martine_Charles_CV.pdf` — downloadable CV.
 - `assets/previews/pangaleo.png`, `assets/previews/kachehub.png`, and `assets/previews/malenyapharmacy.jpeg` — fallback project preview images used when an external site cannot load inside an iframe.
+- `public/og-image.png` — dedicated `1200x630` Open Graph/Twitter preview image with the name, software developer title, and EC brand mark. Vercel serves this file from `/og-image.png`.
 
 To replace an image, keep the same filename or update the matching path in `index.html`, `styles.css`, or `script.js`.
 

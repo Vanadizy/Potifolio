@@ -4,11 +4,14 @@ const deviconStyles = document.createElement('link');
 deviconStyles.rel = 'stylesheet';
 deviconStyles.href = 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css';
 document.head.appendChild(deviconStyles);
-const shareDescription = 'Emmanuel Martine Charles is a Tanzanian Computer Science graduate, software developer, fast learner, and problem solver who builds mobile apps, websites, and reliable IT solutions.';
+const shareDescription = 'Computer Science graduate and technology professional in Tanzania with experience in mobile apps, web development, PHP, React, Flutter, C, C++, MySQL, PostgreSQL, networking, systems support, embedded systems, Arduino, ESP32, graphics/UI design, Agentic AI, software engineering, and IT support. A fast learner and problem solver focused on reliable, secure, and useful digital solutions.';
 document.querySelector('meta[name="description"]')?.setAttribute('content', shareDescription);
 document.querySelector('meta[property="og:description"]')?.setAttribute('content', shareDescription);
 if (!document.querySelector('meta[name="twitter:description"]')) { const twitterDescription = document.createElement('meta'); twitterDescription.name = 'twitter:description'; twitterDescription.content = shareDescription; document.head.appendChild(twitterDescription); }
-document.querySelectorAll('.hero-copy .lead, .page-hero .lead').forEach(copy => { if (!copy.textContent.includes('fast learner')) copy.textContent += ' I am a fast learner of new technologies and a fast problem solver.'; });
+document.querySelectorAll('.hero-copy .lead, .page-hero .lead').forEach(copy => { copy.textContent = copy.textContent.replaceAll('Martine', 'Martin'); if (!copy.textContent.includes('fast learner')) copy.textContent += ' I am a fast learner of new technologies and a fast problem solver.'; });
+if (document.title.startsWith('About |')) { const aboutLead = document.querySelector('.page-hero .lead'); if (aboutLead) aboutLead.textContent = 'I’m Emmanuel Martin Charles, a Computer Science graduate and technology professional with experience in mobile applications, web development, databases, networking, systems support, embedded systems, graphics/UI design, Agentic AI, software engineering, and IT support.'; }
+document.querySelectorAll('meta').forEach(meta => { if (meta.content) meta.content = meta.content.replaceAll('Martine', 'Martin'); });
+document.querySelectorAll('.brand').forEach(brand => { const name = Array.from(brand.childNodes).find(node => node.nodeType === Node.TEXT_NODE); if (name) name.textContent = 'Emmanuel Martin '; });
 if (menuButton) menuButton.addEventListener('click', () => { nav.classList.toggle('open'); menuButton.setAttribute('aria-expanded', nav.classList.contains('open')); });
 document.querySelectorAll('.nav a').forEach(link => link.addEventListener('click', () => nav?.classList.remove('open')));
 const observer = new IntersectionObserver(entries => entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); }), { threshold: .12 });
@@ -80,7 +83,7 @@ const socialLinks = [
 document.querySelectorAll('.socials').forEach(group => {
   group.innerHTML = socialLinks.map(([label, href]) => `<a href="${href}" target="_blank" rel="noopener noreferrer" aria-label="${label}"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true">${iconPaths[label]}</svg></a>`).join('');
 });
-document.querySelectorAll('.copyright').forEach(copyright => { copyright.innerHTML = '<span>© 2026 Emmanuel Martine Charles. All rights reserved.</span><span>Made with care in Tanzania.</span>'; });
+document.querySelectorAll('.copyright').forEach(copyright => { copyright.innerHTML = '<span>© 2026 Emmanuel Martin Charles. All rights reserved.</span><span>Made with care in Tanzania.</span>'; });
 document.querySelectorAll('.stats').forEach(stats => {
   stats.innerHTML = '<div class="stat"><strong>NIT</strong><span>Computer Science graduate from the National Institute of Transport.</span></div><div class="stat"><strong>3+</strong><span>Featured digital products across mobile and web.</span></div><div class="stat"><strong>TZ</strong><span>Based in Dar es Salaam and open to meaningful opportunities.</span></div>';
 });
