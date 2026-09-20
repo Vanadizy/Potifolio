@@ -75,8 +75,15 @@ document.querySelectorAll('.contact-icon').forEach(icon => {
   if (path) icon.innerHTML = `<svg class="icon" viewBox="0 0 24 24" aria-hidden="true">${path}</svg>`;
 });
 const providerIcons = document.querySelectorAll('.contact-row .contact-icon');
-if (providerIcons[0]) providerIcons[0].innerHTML = '<img src="assets/images/logo-vodacom.png" alt="Vodacom">';
-if (providerIcons[1]) providerIcons[1].innerHTML = '<img src="assets/images/logo-halotel.png" alt="Halotel">';
+if (providerIcons[0]) providerIcons[0].innerHTML = '<img src="assets/images/logo-halotel.png" alt="Halotel">';
+if (providerIcons[1]) providerIcons[1].innerHTML = '<img src="assets/images/logo-vodacom.png" alt="Vodacom">';
+document.querySelectorAll('.contact-row').forEach(row => {
+  const title = row.querySelector('strong');
+  const detail = row.querySelector('span');
+  if (!title || !detail) return;
+  if (title.textContent.includes('WhatsApp')) detail.textContent = '0628 115 130 · Halotel';
+  if (title.textContent === 'Phone 2') detail.textContent = '0763 115 132 · Vodacom';
+});
 const socialLinks = [
   ['TikTok', 'https://www.tiktok.com/@vanadizy'],
   ['Instagram', 'https://www.instagram.com/vanadizy'],
@@ -129,7 +136,7 @@ document.querySelectorAll('.contact-row').forEach(row => {
   const text = row.textContent;
   if (!content || content.querySelector('.contact-actions')) return;
   if (text.includes('0628 115 130')) content.insertAdjacentHTML('beforeend', '<div class="contact-actions"><a href="tel:+255628115130"><span class="inline-icon">' + utilityIcons.phone + '</span>Call</a><a href="https://wa.me/255628115130" target="_blank" rel="noopener noreferrer">WhatsApp</a></div>');
-  if (text.includes('0753 115 132')) content.insertAdjacentHTML('beforeend', '<div class="contact-actions"><a href="tel:+255753115132"><span class="inline-icon">' + utilityIcons.phone + '</span>Call</a></div>');
+  if (text.includes('0763 115 132')) content.insertAdjacentHTML('beforeend', '<div class="contact-actions"><a href="tel:+255763115132"><span class="inline-icon">' + utilityIcons.phone + '</span>Call</a></div>');
   if (text.includes('vanadizyemachazy@gmail.com')) content.insertAdjacentHTML('beforeend', '<div class="contact-actions"><a href="mailto:vanadizyemachazy@gmail.com">Email me</a></div>');
 });
 const projectsFooter = '<div class="footer-projects"><strong>Projects</strong><a href="https://pangaleo.co.tz" target="_blank" rel="noopener noreferrer">Panga Leo ↗</a><a href="https://kachehub.com" target="_blank" rel="noopener noreferrer">KacheHub ↗</a><a href="https://malenyapharmacy.com" target="_blank" rel="noopener noreferrer">Malenya Pharmacy ↗</a></div>';
