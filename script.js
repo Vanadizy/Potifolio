@@ -13,6 +13,8 @@ if (document.title.startsWith('About |')) { const aboutLead = document.querySele
 if (document.title.startsWith('About |')) document.body.classList.add('about-page');
 if (document.title.startsWith('About |')) { const aboutLead = document.querySelector('.page-hero .lead'); if (aboutLead) aboutLead.textContent = aboutLead.textContent.replace('Martin', 'Martine'); }
 document.querySelectorAll('.brand').forEach(brand => { const name = Array.from(brand.childNodes).find(node => node.nodeType === Node.TEXT_NODE); if (name) name.textContent = 'Emmanuel '; });
+const landingEyebrow = document.querySelector('.hero .eyebrow');
+if (landingEyebrow) landingEyebrow.textContent = 'Computer technology expert · NIT Tanzania';
 document.querySelectorAll('h2').forEach(heading => { if (heading.textContent.trim() === 'Projects with purpose.') heading.textContent = 'A sample of accomplished projects.'; });
 if (menuButton) menuButton.addEventListener('click', () => { nav.classList.toggle('open'); menuButton.setAttribute('aria-expanded', nav.classList.contains('open')); });
 document.querySelectorAll('.nav a').forEach(link => link.addEventListener('click', () => nav?.classList.remove('open')));
