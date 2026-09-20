@@ -4,7 +4,7 @@ const deviconStyles = document.createElement('link');
 deviconStyles.rel = 'stylesheet';
 deviconStyles.href = 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css';
 document.head.appendChild(deviconStyles);
-const shareDescription = 'Emmanuel Martine Charles is a Computer Science graduate and computer technology expert in Tanzania, building practical software and digital solutions.';
+const shareDescription = 'Computer Science Specialist and technology professional with experience in mobile applications, web development, databases, networking, systems support, embedded systems, graphics/UI design, Agentic AI, software engineering, and IT support.';
 const personalPreviewImage = 'https://potifolio-olive.vercel.app/assets/images/og-image.jpeg';
 document.querySelectorAll('meta[property="og:image"], meta[name="twitter:image"]').forEach(meta => meta.setAttribute('content', personalPreviewImage));
 document.querySelector('link[rel="icon"]')?.setAttribute('href', personalPreviewImage);
