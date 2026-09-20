@@ -1,5 +1,14 @@
 const menuButton = document.querySelector('.menu');
 const nav = document.querySelector('.nav');
+const deviconStyles = document.createElement('link');
+deviconStyles.rel = 'stylesheet';
+deviconStyles.href = 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css';
+document.head.appendChild(deviconStyles);
+const shareDescription = 'Emmanuel Martine Charles is a Tanzanian Computer Science graduate, software developer, fast learner, and problem solver who builds mobile apps, websites, and reliable IT solutions.';
+document.querySelector('meta[name="description"]')?.setAttribute('content', shareDescription);
+document.querySelector('meta[property="og:description"]')?.setAttribute('content', shareDescription);
+if (!document.querySelector('meta[name="twitter:description"]')) { const twitterDescription = document.createElement('meta'); twitterDescription.name = 'twitter:description'; twitterDescription.content = shareDescription; document.head.appendChild(twitterDescription); }
+document.querySelectorAll('.hero-copy .lead, .page-hero .lead').forEach(copy => { if (!copy.textContent.includes('fast learner')) copy.textContent += ' I am a fast learner of new technologies and a fast problem solver.'; });
 if (menuButton) menuButton.addEventListener('click', () => { nav.classList.toggle('open'); menuButton.setAttribute('aria-expanded', nav.classList.contains('open')); });
 document.querySelectorAll('.nav a').forEach(link => link.addEventListener('click', () => nav?.classList.remove('open')));
 const observer = new IntersectionObserver(entries => entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); }), { threshold: .12 });
@@ -64,6 +73,11 @@ document.querySelectorAll('.socials').forEach(group => {
 document.querySelectorAll('.copyright').forEach(copyright => { copyright.innerHTML = '<span>© 2026 Emmanuel Martine Charles. All rights reserved.</span><span>Made with care in Tanzania.</span>'; });
 document.querySelectorAll('.stats').forEach(stats => {
   stats.innerHTML = '<div class="stat"><strong>NIT</strong><span>Computer Science graduate from the National Institute of Transport.</span></div><div class="stat"><strong>3+</strong><span>Featured digital products across mobile and web.</span></div><div class="stat"><strong>TZ</strong><span>Based in Dar es Salaam and open to meaningful opportunities.</span></div>';
+});
+document.querySelectorAll('.skill-grid').forEach(grid => {
+  if (document.querySelector('.language-section')) return;
+  grid.insertAdjacentHTML('afterend', '<section class="section language-section reveal"><div class="section-head"><div><div class="eyebrow">Programming toolkit</div><h2>Languages and data tools.</h2></div><p>I work with these technologies in both visual development environments and command-line workflows where appropriate.</p></div><div class="language-grid"><div class="language-card glass"><i class="devicon-php-plain" aria-hidden="true"></i><strong>PHP</strong><span>Web backends and server-side development.</span></div><div class="language-card glass"><i class="devicon-flutter-plain" aria-hidden="true"></i><strong>Flutter</strong><span>Cross-platform mobile application development.</span></div><div class="language-card glass"><i class="devicon-react-original" aria-hidden="true"></i><strong>React</strong><span>Interactive and component-based web interfaces.</span></div><div class="language-card glass"><i class="devicon-mysql-original" aria-hidden="true"></i><strong>MySQL</strong><span>Database work through GUI tools and command line.</span></div><div class="language-card glass"><i class="devicon-postgresql-plain" aria-hidden="true"></i><strong>PostgreSQL</strong><span>SQL development through GUI tools and command line.</span></div></div></section>');
+  observer.observe(document.querySelector('.language-section'));
 });
 document.querySelectorAll('.contact-info').forEach(info => {
   info.querySelectorAll('.contact-row').forEach(row => { if (row.textContent.includes('Location')) row.remove(); });
