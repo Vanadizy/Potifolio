@@ -8,11 +8,12 @@ const shareDescription = 'Computer Science graduate and technology professional 
 document.querySelector('meta[name="description"]')?.setAttribute('content', shareDescription);
 document.querySelector('meta[property="og:description"]')?.setAttribute('content', shareDescription);
 if (!document.querySelector('meta[name="twitter:description"]')) { const twitterDescription = document.createElement('meta'); twitterDescription.name = 'twitter:description'; twitterDescription.content = shareDescription; document.head.appendChild(twitterDescription); }
-document.querySelectorAll('.hero-copy .lead, .page-hero .lead').forEach(copy => { copy.textContent = copy.textContent.replaceAll('Martine', 'Martin'); if (!copy.textContent.includes('fast learner')) copy.textContent += ' I am a fast learner of new technologies and a fast problem solver.'; });
-if (document.title.startsWith('About |')) { const aboutLead = document.querySelector('.page-hero .lead'); if (aboutLead) aboutLead.textContent = 'I’m Emmanuel Martin Charles, a Computer Science graduate and technology professional with experience in mobile applications, web development, databases, networking, systems support, embedded systems, graphics/UI design, Agentic AI, software engineering, and IT support.'; }
+document.querySelectorAll('.hero-copy .lead, .page-hero .lead').forEach(copy => { if (!copy.textContent.includes('fast learner')) copy.textContent += ' I am a fast learner of new technologies and a fast problem solver.'; });
+if (document.title.startsWith('About |')) { const aboutLead = document.querySelector('.page-hero .lead'); if (aboutLead) aboutLead.textContent = 'I’m Emmanuel Martine Charles, a Computer Science graduate and technology professional with experience in mobile applications, web development, databases, networking, systems support, embedded systems, graphics/UI design, Agentic AI, software engineering, and IT support.'; }
 if (document.title.startsWith('About |')) document.body.classList.add('about-page');
-document.querySelectorAll('meta').forEach(meta => { if (meta.content) meta.content = meta.content.replaceAll('Martine', 'Martin'); });
-document.querySelectorAll('.brand').forEach(brand => { const name = Array.from(brand.childNodes).find(node => node.nodeType === Node.TEXT_NODE); if (name) name.textContent = 'Emmanuel Martin '; });
+if (document.title.startsWith('About |')) { const aboutLead = document.querySelector('.page-hero .lead'); if (aboutLead) aboutLead.textContent = aboutLead.textContent.replace('Martin', 'Martine'); }
+document.querySelectorAll('.brand').forEach(brand => { const name = Array.from(brand.childNodes).find(node => node.nodeType === Node.TEXT_NODE); if (name) name.textContent = 'Emmanuel '; });
+document.querySelectorAll('h2').forEach(heading => { if (heading.textContent.trim() === 'Projects with purpose.') heading.textContent = 'A sample of accomplished projects.'; });
 if (menuButton) menuButton.addEventListener('click', () => { nav.classList.toggle('open'); menuButton.setAttribute('aria-expanded', nav.classList.contains('open')); });
 document.querySelectorAll('.nav a').forEach(link => link.addEventListener('click', () => nav?.classList.remove('open')));
 const observer = new IntersectionObserver(entries => entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); }), { threshold: .12 });
@@ -84,9 +85,9 @@ const socialLinks = [
 document.querySelectorAll('.socials').forEach(group => {
   group.innerHTML = socialLinks.map(([label, href]) => `<a href="${href}" target="_blank" rel="noopener noreferrer" aria-label="${label}"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true">${iconPaths[label]}</svg></a>`).join('');
 });
-document.querySelectorAll('.copyright').forEach(copyright => { copyright.innerHTML = '<span>© 2026 Emmanuel Martin Charles. All rights reserved.</span><span>Made with care in Tanzania.</span>'; });
+document.querySelectorAll('.copyright').forEach(copyright => { copyright.innerHTML = '<span>© 2026 Emmanuel Martine Charles. All rights reserved.</span><span>Made with care in Tanzania.</span>'; });
 document.querySelectorAll('.stats').forEach(stats => {
-  stats.innerHTML = '<div class="stat"><strong>NIT</strong><span>Computer Science graduate from the National Institute of Transport.</span></div><div class="stat"><strong>3+</strong><span>Featured digital products across mobile and web.</span></div><div class="stat"><strong>TZ</strong><span>Based in Dar es Salaam and open to meaningful opportunities.</span></div>';
+  stats.innerHTML = '<div class="stat"><strong>NIT</strong><span>Computer Science graduate from the National Institute of Transport.</span></div><div class="stat"><strong>Build</strong><span>Mobile apps, web systems, databases, and practical digital products.</span></div><div class="stat"><strong>Support</strong><span>Networking, operating systems, IT support, embedded systems, and problem solving.</span></div>';
 });
 document.querySelectorAll('.skill-grid').forEach(grid => {
   if (document.querySelector('.language-section')) return;

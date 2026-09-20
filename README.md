@@ -1,6 +1,6 @@
-# Emmanuel Martin Charles Portfolio
+# Emmanuel Charles Portfolio
 
-This repository contains Emmanuel Martin Charles's personal portfolio website. It presents his background as a Computer Science graduate, software developer, mobile application developer, web designer, and IT support professional in Tanzania.
+This repository contains Emmanuel Martine Charles's personal portfolio website. It presents his background as a Computer Science graduate, software developer, mobile application developer, web designer, and IT support professional in Tanzania.
 
 The website is designed as a professional personal-brand site with a clean CV-inspired layout, liquid-glass cards, responsive spacing, soft animations, project previews, contact options, and social links.
 
