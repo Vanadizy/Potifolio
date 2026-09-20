@@ -19,7 +19,9 @@ The site is a static multi-page website. It does not require a framework, databa
 - `styles.css` contains the complete visual system, responsive layouts, colors, typography, cards, forms, map layout, mobile navigation, and animations.
 - `script.js` controls the mobile menu, search navigation, scroll reveal effects, social icons, provider logos, project inquiry form, footer project links, copyright text, and homepage map section.
 
-The skills page also adds PHP, Flutter, React, MySQL, and PostgreSQL logos using the Devicon CDN. MySQL and PostgreSQL descriptions cover both GUI tools and command-line workflows.
+The skills page also adds PHP, C, C++, Flutter, React, MySQL, PostgreSQL, Arduino, and ESP32. They are organized into frontend/mobile, backend/programming, database/SQL, and embedded-systems categories. MySQL and PostgreSQL descriptions cover both GUI tools and command-line workflows.
+
+It also includes a text-only AI and quality engineering section covering Agentic AI, iterative development loops, the Software Development Life Cycle, development methodologies, and the qualities expected from reliable, secure, maintainable, accessible, and useful software.
 - `assets/` stores images, the CV, and local preview documents.
 
 ## Personal assets
