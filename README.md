@@ -34,6 +34,7 @@ The supplied assets currently include:
 - `assets/images/logo-vodacom.png` — Vodacom logo used in the contact details.
 - `assets/images/logo-halotel.png` — Halotel logo used in the contact details.
 - `assets/docs/Emmanuel_Martine_Charles_CV.pdf` — downloadable CV.
+- `assets/previews/pangaleo.png`, `assets/previews/kachehub.png`, and `assets/previews/malenyapharmacy.jpeg` — fallback project preview images used when an external site cannot load inside an iframe.
 
 To replace an image, keep the same filename or update the matching path in `index.html`, `styles.css`, or `script.js`.
 

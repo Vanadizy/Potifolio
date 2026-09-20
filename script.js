@@ -33,6 +33,16 @@ document.querySelectorAll('.project-preview iframe').forEach(frame => {
   overlay.className = 'preview-overlay';
   overlay.innerHTML = `<small>${type}</small><strong>${title}</strong><span>${description}</span>`;
   frame.parentElement.appendChild(overlay);
+  const previewImage = document.createElement('img');
+  const imagePath = key.includes('pangaleo') ? 'assets/previews/pangaleo.png' : key.includes('kachehub') ? 'assets/previews/kachehub.png' : 'assets/previews/malenyapharmacy.jpeg';
+  previewImage.className = 'preview-fallback';
+  previewImage.src = imagePath;
+  previewImage.alt = `${title} website preview image`;
+  frame.parentElement.insertBefore(previewImage, frame);
+  let frameLoaded = false;
+  frame.addEventListener('load', () => { frameLoaded = true; });
+  const fallbackDelay = key.includes('kachehub') || key.includes('malenyapharmacy') ? 2500 : 5000;
+  setTimeout(() => { if (!frameLoaded || key.includes('kachehub') || key.includes('malenyapharmacy')) previewImage.classList.add('is-visible'); }, fallbackDelay);
 });
 
 const iconPaths = {
