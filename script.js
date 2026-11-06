@@ -34,6 +34,7 @@ const projectInfo = {
   'kisikypharmacy.com': ['04 · Business website', 'Kisiky Pharmacy', 'A pharmacy website that helps customers find the business and explore its services online.'],
   'mikefamousnails.com': ['05 · Business website', 'Mike Famous Nails', 'A dedicated online presence for a nail and beauty business.'],
   'wingapro.com': ['06 · Mobile app deployment', 'WingaPro', 'Supported deployment of the WingaPro app to Google Play; I was not an app developer.'],
+  'uza.pangaleo.co.tz': ['07 · Business platform', 'Uza EMS', 'An Electronic Management System for electronics shops to manage stock, sales, customers, warranties, and reports.'],
   'assets/previews/pangaleo.html': ['01 · Mobile application', 'Panga Leo', 'A full-cycle mobile app published on Google Play Store and Apple App Store.'],
   'assets/previews/kachehub.html': ['02 · Web platform', 'KacheHub', 'A focused web platform designed around a clear, useful digital experience.'],
   'assets/previews/malenyapharmacy.html': ['03 · Business website', 'Malenya Pharmacy', 'A professional pharmacy website that helps customers discover trusted services.'],
@@ -50,7 +51,7 @@ document.querySelectorAll('.project-preview iframe').forEach(frame => {
   overlay.innerHTML = `<small>${type}</small><strong>${title}</strong><span>${description}</span>`;
   frame.parentElement.appendChild(overlay);
   const previewImage = document.createElement('img');
-  const imagePath = key.includes('pangaleo') ? 'assets/previews/pangaleo.png' : key.includes('kachehub') ? 'assets/previews/kachehub.png' : key.includes('kisikypharmacy') ? 'assets/previews/kisikypharmacy.jpeg' : key.includes('mikefamousnails') ? 'assets/previews/mikefamousnails.png' : key.includes('wingapro') ? 'assets/previews/WingaPro.jpeg' : 'assets/previews/malenyapharmacy.jpeg';
+  const imagePath = key.includes('pangaleo') ? 'assets/previews/pangaleo.png' : key.includes('kachehub') ? 'assets/previews/kachehub.png' : key.includes('kisikypharmacy') ? 'assets/previews/kisikypharmacy.jpeg' : key.includes('mikefamousnails') ? 'assets/previews/mikefamousnails.png' : key.includes('wingapro') ? 'assets/previews/WingaPro.jpeg' : key.includes('uza.pangaleo.co.tz') ? 'assets/previews/pangaleo.png' : 'assets/previews/malenyapharmacy.jpeg';
   previewImage.className = 'preview-fallback';
   previewImage.src = imagePath;
   previewImage.alt = `${title} website preview image`;
@@ -145,7 +146,7 @@ document.querySelectorAll('.contact-row').forEach(row => {
   if (text.includes('0763 115 132')) content.insertAdjacentHTML('beforeend', '<div class="contact-actions"><a href="tel:+255763115132"><span class="inline-icon">' + utilityIcons.phone + '</span>Call</a></div>');
   if (text.includes('vanadizyemachazy@gmail.com')) content.insertAdjacentHTML('beforeend', '<div class="contact-actions"><a href="mailto:vanadizyemachazy@gmail.com">Email me</a></div>');
 });
-const projectsFooter = '<div class="footer-projects"><strong>Projects</strong><a href="https://pangaleo.co.tz" target="_blank" rel="noopener noreferrer">Panga Leo ↗</a><a href="https://kachehub.com" target="_blank" rel="noopener noreferrer">KacheHub ↗</a><a href="https://malenyapharmacy.com" target="_blank" rel="noopener noreferrer">Malenya Pharmacy ↗</a></div>';
+const projectsFooter = '<div class="footer-projects"><strong>Projects</strong><a href="https://pangaleo.co.tz" target="_blank" rel="noopener noreferrer">Panga Leo ↗</a><a href="https://kachehub.com" target="_blank" rel="noopener noreferrer">KacheHub ↗</a><a href="https://malenyapharmacy.com" target="_blank" rel="noopener noreferrer">Malenya Pharmacy ↗</a><a href="https://kisikypharmacy.com" target="_blank" rel="noopener noreferrer">Kisiky Pharmacy ↗</a><a href="https://mikefamousnails.com" target="_blank" rel="noopener noreferrer">Mike Famous Nails ↗</a><a href="https://wingapro.com/" target="_blank" rel="noopener noreferrer">WingaPro ↗</a><a href="https://uza.pangaleo.co.tz" target="_blank" rel="noopener noreferrer">Uza EMS ↗</a></div>';
 document.querySelectorAll('.footer-grid').forEach(footer => footer.insertAdjacentHTML('beforeend', projectsFooter));
 const projectList = document.querySelector('.project-list');
 if (projectList) {
